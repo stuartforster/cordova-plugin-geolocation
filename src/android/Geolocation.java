@@ -54,7 +54,7 @@ import org.json.JSONObject;
 
 import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.ArrayList;
-import java.util.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import java.util.Map;
 import javax.security.auth.callback.Callback;
