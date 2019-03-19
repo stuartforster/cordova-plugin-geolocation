@@ -71,7 +71,7 @@ public class Geolocation extends ReflectiveCordovaPlugin implements OnCompleteLi
     private SettingsClient settingsClient;
 
     private Map<String, SimpleImmutableEntry<LocationRequest, LocationCallback>> watchers = new ConcurrentHashMap<String, SimpleImmutableEntry<LocationRequest, LocationCallback>>();
-    private List<CallbackContext> locationCallbacks = new Collections.synchronizedList(ArrayList<CallbackContext>());
+    private List<CallbackContext> locationCallbacks = Collections.synchronizedList(new ArrayList<CallbackContext>());
 
     @Override
     protected void pluginInitialize() {
