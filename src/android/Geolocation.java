@@ -55,7 +55,7 @@ import org.json.JSONObject;
 import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.Collections;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
 import java.util.Map;
 import javax.security.auth.callback.Callback;
@@ -72,7 +72,7 @@ public class Geolocation extends ReflectiveCordovaPlugin implements OnCompleteLi
     private SettingsClient settingsClient;
 
     private Map<String, SimpleImmutableEntry<LocationRequest, LocationCallback>> watchers = new ConcurrentHashMap<String, SimpleImmutableEntry<LocationRequest, LocationCallback>>();
-    private List<CallbackContext> locationCallbacks = Collections.synchronizedList(new ArrayList<CallbackContext>());
+    private List<CallbackContext> locationCallbacks = new CopyOnWriteArrayList<CallbackContext>();
 
     @Override
     protected void pluginInitialize() {
